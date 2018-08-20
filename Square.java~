@@ -1,0 +1,119 @@
+import java.awt.*;
+import objectdraw.*;
+
+public class Square extends ARectangle {
+    private int side;
+  /* 
+   * Name: Constructor  
+   * Purpose: initialize the square
+   * Parameters: none 
+   */
+    public Square() 
+    {
+        super("Square",0,0);
+        this.setS(0);
+    }
+  /* 
+   * Name: Constructor  
+   * Purpose: initialize the square
+   * Parameters: int x, int y, int side 
+   */
+    public Square(int x, int y, int side) 
+    {
+        super("Square",x,y);
+        this.setS(side);
+    }
+  /* 
+   * Name: Constructor  
+   * Purpose: initialize the square
+   * Parameters: point upperleft, int side 
+   */
+    public Square(Point upperLeft, int side) 
+    {
+        super("Square", upperLeft.getX(), upperLeft.getY());
+        this.setS(side);
+    }
+  /* 
+   * Name: Constructor  
+   * Purpose: deep copy the square
+   * Parameters: square square 
+   */
+    public Square(Square square) 
+    {
+      super(square.getName(), square.getUpperLeft());
+      this.setS(square.getS());
+    }
+  /* 
+   * Name: getter  
+   * Purpose: get side length
+   * Parameters: none 
+   */  
+    public int getS()
+    {
+      return this.side;
+    }
+  /* 
+   * Name: setter  
+   * Purpose: set side length
+   * Parameters: int s 
+   */  
+    private void setS(int s)
+    {
+      this.side = s;
+    }
+  /* 
+   * Name: toString()  
+   * Purpose: print out information for square
+   * Parameters: none 
+   */
+    @Override
+    public String toString() 
+    {
+        return super.getName() + super.toString() + " Sides: " + this.getS();
+    }
+  /* 
+   * Name: equals  
+   * Purpose: initialize the square
+   * Parameters: none 
+   */
+    @Override
+    public boolean equals(Object o) 
+    {
+        if(o == null)
+    {
+      return false;
+    }
+    
+    if(this.getClass() != o.getClass())
+    {
+      return false;
+    }
+    Square checkS = (Square)o;
+    if(this.getS() == checkS.getS())
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+    }
+  /* 
+   * Name: draw()  
+   * Purpose: wether to draw filled or framed draw the square 
+   * Parameters: DrawingCanvas canvas, color c, boolean fill
+   */
+    public void draw(DrawingCanvas canvas, Color c, boolean fill) 
+    {
+        Location upleftC = new Location(super.getUpperLeft().getX(), super.getUpperLeft().getY());
+        if(fill == true)
+        {
+          FilledRect newfilledS = new FilledRect(upleftC, this.getS(),this.getS(),canvas);
+          newfilledS.setColor(c);
+        }
+        else
+        {
+          FramedRect newframeS = new FramedRect(upleftC, this.getS(),this.getS(),canvas);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+README
+
+Jiaqi Fan
+A12584051
+cse8bwang
+2/19/2016
+
+
+Program Description:
+In this program i created a micky mouse and a house using geometry objects such as circle, rectangle, square, and triangle. The micky made with 3 circles that one big 2 smalls and colored black. the house is very interesting. when it is the time to color the roof the color falls from top to bottom. This happen because that the triangle roof was colord be a lot of lines side following the triangle sides. It looks cool.
+
+Short Response:
+a shallow copy is a bit wise copy of an object.
+a deep copy copies all fields, and makes copies dynamically allocated memory pointed to by the fields.
+1. we can using different object draw the different thing on canvas
+
+2. we could insert several print statements inside the equals method to check wether the comparesion compared all the instances in for different object. 
